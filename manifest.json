@@ -2,8 +2,8 @@
   "name": "YT Residence Dashboard",
   "short_name": "YT Residence",
   "display": "standalone",
-  "start_url": "https://0chastral0.github.io/yt-residence-pwa/",
-  "scope": "https://0chastral0.github.io/yt-residence-pwa/",
+  "start_url": "/yt-residence-pwa/",
+  "scope": "/yt-residence-pwa/",
   "background_color": "#3B82F6",
   "theme_color": "#3B82F6",
   "icons": [
