@@ -39,18 +39,11 @@
     loading="eager">
   </iframe>
   <script>
-    var GAS_URL = 'https://script.google.com/macros/s/AKfycbzNBbfqOuQN7jqQ6KUxm7tTQE02lZWnywrHXyB7c7SUOODFSgg_HLlWSFN0x-2uP4lfmQ/exec';
-    // On iOS, iframe + google.script.run causes auth redirects → white screen.
-    // iOS users get a direct redirect instead.
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-      document.getElementById('appFrame').style.display = 'none';
-      window.location.replace(GAS_URL);
-    } else {
+    // Lock history so back-swipe never escapes the shell
+    history.pushState(null, '', window.location.href);
+    window.addEventListener('popstate', function() {
       history.pushState(null, '', window.location.href);
-      window.addEventListener('popstate', function() {
-        history.pushState(null, '', window.location.href);
-      });
-    }
+    });
   </script>
 </body>
 </html>
