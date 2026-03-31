@@ -32,9 +32,17 @@
 </head>
 <body>
   <iframe
+    id="appFrame"
     src="https://script.google.com/macros/s/AKfycbzNBbfqOuQN7jqQ6KUxm7tTQE02lZWnywrHXyB7c7SUOODFSgg_HLlWSFN0x-2uP4lfmQ/exec"
     allow="fullscreen"
     loading="eager">
   </iframe>
+  <script>
+    // Lock history so back-swipe never escapes the shell
+    history.pushState(null, '', window.location.href);
+    window.addEventListener('popstate', function() {
+      history.pushState(null, '', window.location.href);
+    });
+  </script>
 </body>
 </html>
